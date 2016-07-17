@@ -12,6 +12,8 @@ Category:            System
 Build-type:          Simple
 Cabal-version:       >=1.10
 
+Tested-With: GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.2, GHC == 8.0.1
+
 Source-repository head
   type:       git
   location:   https://github.com/Ongy/locale-hs
