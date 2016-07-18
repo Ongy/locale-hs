@@ -1,4 +1,5 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
+{-# LANGUAGE CPP #-}
 module System.Locale.Current
   ( getDay
   , getABDay
@@ -18,7 +19,11 @@ module System.Locale.Current
   )
 where
 
+#if MIN_VERSION_base(4,8,0)
+import Data.Time.Format (TimeLocale(..), defaultTimeLocale)
+#else
 import System.Locale (TimeLocale(..), defaultTimeLocale)
+#endif
 
 import Foreign.C.String (peekCString)
 import Foreign.C.Types (CInt(..), CChar(..))
